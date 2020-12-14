@@ -228,23 +228,23 @@ footer {
   line-height: 4.4rem;
 }
 
-footer .social-media ul {
+footer ul {
   line-height: normal;
   display: inline-block;
   vertical-align: middle;
 }
 
-footer .social-media ul li {
+footer ul li {
   display: inline-block;
   padding: 0 1.2rem;
 }
 
-footer .social-media ul li a img {
+footer ul li a img {
   vertical-align: bottom;
   transition: all 0.3s ease 0s;
 }
 
-footer .social-media ul li a img:hover {
+footer ul li a img:hover {
   filter: invert(50%) sepia(40%) saturate(692%) hue-rotate(284deg) brightness(87%) contrast(91%);
 }
 
