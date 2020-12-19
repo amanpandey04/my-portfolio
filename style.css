@@ -203,7 +203,7 @@ header p {
   margin-top: 6rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .navigator a {
@@ -277,5 +277,9 @@ footer ul li a img:hover {
   .page,
   .navigator {
     width: 48vw;
+  }
+
+  .navigator {
+    justify-content: space-around;
   }
 }
