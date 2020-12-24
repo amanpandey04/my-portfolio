@@ -54,20 +54,25 @@ nav {
   height: 4.4rem;
   background-color: var(--secondary-color);
   font-family: "Poppins";
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .logo {
   margin-bottom: 1rem;
-  color: var(--heading-color);
   font-family: "Caveat";
   text-decoration: none;
   font-size: 3.4rem;
   font-weight: 488;
-  transition: all 0.3s ease 0s;
-}
-
-.logo:hover {
-  color: var(--tertiary-dark);
+  background-color: var(--heading-color);
+  background-image: linear-gradient(90.6deg, #004ca1 -1.2%, #cb5fd5 91.6%);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .nav-links li {
@@ -115,7 +120,15 @@ header p {
 }
 
 .name {
-  color: var(--tertiary-dark);
+  background-color: var(--heading-color);
+  background-image: linear-gradient(90.6deg, #007dda -1.2%, #cb5fd5 91.6%);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .arrow {
@@ -230,6 +243,8 @@ footer {
   background-color: var(--secondary-color);
   height: 4.4rem;
   line-height: 4.4rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 footer ul {
