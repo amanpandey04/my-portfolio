@@ -12,13 +12,25 @@
       <a class="logo" href="index.html">&lt;ap&gt;</a>
 
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="project.html">Projects</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="project.html">PROJECTS</a></li>
         <li>
-          <a style="font-weight: bold; font-size: large; color: #cc5d8a" href="blog.html">Blogs</a>
+          <a
+            style="
+              font-weight: bold;
+              font-size: large;
+              color: var(--tertiary-dark);
+              text-decoration: underline;
+              text-underline-offset: 0.4rem;
+            "
+            href="blog.html"
+            >BLOGS</a
+          >
         </li>
       </ul>
     </nav>
+
+    <label><input id="theme-checkbox" type="checkbox" /><span class="theme-toggle"></span></label>
 
     <header>
       <img class="page-hero" src="images/blog.svg" alt="blog" />
@@ -75,5 +87,6 @@
         </li>
       </ul>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>

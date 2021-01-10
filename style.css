@@ -15,6 +15,17 @@
   --tertiary-dark: #cc5d8a;
   --heading-color: #001858;
   --para-color: #172c66;
+  --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode {
+  --primary-color: #232946;
+  --secondary-color: #494e6e;
+  --tertiary-color: #cc5d8a;
+  --tertiary-dark: #cc5d8a;
+  --heading-color: #fffffe;
+  --para-color: #b8c1ec;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -44,9 +55,32 @@ h2 {
 
 hr {
   border: 0;
-  border-top: 0.6rem dotted var(--secondary-color);
+  border-top: 0.6rem dotted #8bd3dd;
   width: 4rem;
   margin: 3rem auto;
+}
+
+#theme-checkbox {
+  display: none;
+}
+
+.theme-toggle {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  float: right;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  display: block;
+  background: url("images/moon.svg") no-repeat left center;
+  filter: invert(6%) sepia(81%) saturate(7496%) hue-rotate(209deg) brightness(75%) contrast(118%);
+  background-size: 2rem;
+  transition: all 0.2s ease;
+}
+
+#theme-checkbox:checked + .theme-toggle {
+  background-image: url("images/sun.svg");
+  filter: invert(77%) sepia(58%) saturate(595%) hue-rotate(330deg) brightness(102%) contrast(101%);
 }
 
 nav {
@@ -57,8 +91,8 @@ nav {
   height: 4.4rem;
   background-color: var(--secondary-color);
   font-family: "Poppins";
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
 }
 
 .logo {
@@ -68,13 +102,13 @@ nav {
   font-size: 3.4rem;
   font-weight: 488;
   color: var(--heading-color);
-  text-shadow: 0.02rem 0.02rem 0.04rem #001858;
+  text-shadow: 0.02rem 0.02rem 0.04rem var(--heading-color);
   transition: all 0.3s ease 0s;
 }
 
 .logo:hover {
   color: var(--tertiary-dark);
-  text-shadow: 0.02rem 0.02rem 0.04rem #cc5d8a;
+  text-shadow: 0.02rem 0.02rem 0.04rem var(--tertiary-dark);
 }
 
 .nav-links li {
@@ -122,7 +156,7 @@ header p {
 }
 
 .name {
-  color: var(--tertiary-dark);
+  color: #f652a0;
 }
 
 .arrow {
@@ -158,7 +192,7 @@ header p {
 }
 
 .page-section {
-  box-shadow: 0 0.313rem 1.563rem 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.313rem 1.563rem 0 var(--shadow-color);
   padding: 1rem 1rem;
   padding-top: 0;
   border-radius: 0.4rem;
@@ -191,7 +225,6 @@ header p {
 }
 
 .btn-primary:hover {
-  color: var(--heading-color);
   background: var(--primary-color);
   border-color: var(--tertiary-color);
   transition: all 0.4s ease 0s;
@@ -244,8 +277,8 @@ footer {
   background-color: var(--secondary-color);
   height: 4.4rem;
   line-height: 4.4rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
 }
 
 footer ul {
@@ -262,10 +295,12 @@ footer ul li {
 footer ul li a img {
   vertical-align: bottom;
   transition: all 0.3s ease 0s;
+  filter: invert(53%) sepia(56%) saturate(3277%) hue-rotate(301deg) brightness(97%) contrast(99%);
+  width: 2.4rem;
 }
 
 footer ul li a img:hover {
-  filter: invert(50%) sepia(40%) saturate(692%) hue-rotate(284deg) brightness(87%) contrast(91%);
+  filter: invert(27%) sepia(95%) saturate(1595%) hue-rotate(302deg) brightness(85%) contrast(98%);
 }
 
 .html5 {
@@ -296,7 +331,7 @@ footer ul li a img:hover {
   header,
   .page,
   .navigator {
-    width: 48vw;
+    width: 52vw;
   }
 
   .navigator {
