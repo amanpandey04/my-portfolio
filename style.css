@@ -128,6 +128,15 @@ nav {
   color: var(--tertiary-dark);
 }
 
+.nav-links .active-nav-link {
+  font-weight: bold;
+  font-size: large;
+  color: var(--tertiary-dark);
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.4rem;
+}
+
 header {
   text-align: center;
   width: 80vw;
