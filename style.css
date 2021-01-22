@@ -310,6 +310,7 @@ footer ul li a img {
 
 footer ul li a img:hover {
   filter: invert(27%) sepia(95%) saturate(1595%) hue-rotate(302deg) brightness(85%) contrast(98%);
+  transform: scale(1.2);
 }
 
 .html5 {
