@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes:
+    portfolio-light --default,
+    portfolio-dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "portfolio-light";
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: #fef6e4;
+  --color-base-200: #fbefd9;
+  --color-base-300: #eadfc8;
+  --color-base-content: #172c66;
+
+  --color-primary: #f582ae;
+  --color-primary-content: #001858;
+
+  --color-secondary: #8bd3dd;
+  --color-secondary-content: #001858;
+
+  --color-accent: #cc5d8a;
+  --color-accent-content: #fffffe;
+
+  --color-neutral: #001858;
+  --color-neutral-content: #fef6e4;
+
+  --radius-selector: 0.75rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.5rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "portfolio-dark";
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: #232946;
+  --color-base-200: #1f233d;
+  --color-base-300: #72757e;
+  --color-base-content: #b8c1ec;
+
+  --color-primary: #cc5d8a;
+  --color-primary-content: #fffffe;
+
+  --color-secondary: #72757e;
+  --color-secondary-content: #fffffe;
+
+  --color-accent: #f582ae;
+  --color-accent-content: #232946;
+
+  --color-neutral: #121629;
+  --color-neutral-content: #fffffe;
+
+  --radius-selector: 0.75rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.5rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Fraunces", serif;
+  --font-body: "Lora", serif;
+  --font-hand: "Caveat", cursive;
+}
+
+:root {
+  --portfolio-bg: #fef6e4;
+  --portfolio-heading: #001858;
+  --portfolio-para: #172c66;
+  --portfolio-secondary: #8bd3dd;
+  --portfolio-primary: #f582ae;
+  --portfolio-primary-dark: #cc5d8a;
+}
+
+[data-theme="portfolio-dark"] {
+  --portfolio-bg: #232946;
+  --portfolio-heading: #fffffe;
+  --portfolio-para: #b8c1ec;
+  --portfolio-secondary: #72757e;
+  --portfolio-primary: #cc5d8a;
+  --portfolio-primary-dark: #cc5d8a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-para);
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background: var(--portfolio-primary);
+  color: var(--portfolio-heading);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--portfolio-primary);
+  outline-offset: 4px;
+}
+
+.text-heading {
+  color: var(--portfolio-heading);
+}
+
+.text-body {
+  color: var(--portfolio-para);
+}
+
+.bg-page {
+  background: var(--portfolio-bg);
+}
+
+.section-anchor {
+  scroll-margin-top: 7rem;
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--portfolio-secondary) 8%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--portfolio-secondary) 8%, transparent) 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.avatar-annotation {
+  left: -50px;
+  top: 20px;
+}
+
+@media (max-width: 460px) {
+  .avatar-annotation {
+    left: -20px;
+    top: 20px;
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 380px) {
+  .avatar-annotation {
+    left: -5px;
+    transform: scale(0.78);
+  }
+}
+
+@keyframes theme-toggle-hover {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(-8deg);
+  }
+
+  80% {
+    transform: rotate(4deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.theme-toggle:hover {
+  animation: theme-toggle-hover 350ms cubic-bezier(0.34, 1.56, 0.64, 1) 1;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
