@@ -1,4 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigationType } from "react-router-dom";
+
+import { useLayoutEffect, useRef } from "react";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -9,27 +11,75 @@ import NotFound from "./pages/NotFound";
 import ProjectDetails from "./pages/ProjectDetails";
 import Projects from "./pages/Projects";
 
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+function ScrollManager() {
+  const location = useLocation();
+  const navigationType = useNavigationType();
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+  const scrollPositions = useRef(new Map());
 
-  useEffect(() => {
+  // Let this component control scroll restoration.
+  useLayoutEffect(() => {
+    const previous = window.history.scrollRestoration;
+
     window.history.scrollRestoration = "manual";
 
     return () => {
-      window.history.scrollRestoration = "auto";
+      window.history.scrollRestoration = previous;
     };
   }, []);
 
-  useEffect(() => {
+  // Save the current page's scroll position.
+  useLayoutEffect(() => {
+    const savePosition = () => {
+      scrollPositions.current.set(location.key, {
+        x: window.scrollX,
+        y: window.scrollY,
+      });
+    };
+
+    let frameId;
+
+    const handleScroll = () => {
+      cancelAnimationFrame(frameId);
+
+      frameId = requestAnimationFrame(savePosition);
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.key]);
+
+  // Handle navigation.
+  useLayoutEffect(() => {
+    if (navigationType === "POP") {
+      const savedPosition = scrollPositions.current.get(location.key);
+
+      if (savedPosition) {
+        requestAnimationFrame(() => {
+          window.scrollTo({
+            left: savedPosition.x,
+            top: savedPosition.y,
+            behavior: "auto",
+          });
+        });
+
+        return;
+      }
+    }
+
+    // PUSH / REPLACE or an unsaved POP position.
     window.scrollTo({
-      top: 0,
       left: 0,
+      top: 0,
       behavior: "auto",
     });
-  }, [pathname]);
+  }, [location.key, navigationType]);
 
   return null;
 }
@@ -47,7 +97,7 @@ export default function App() {
 
       <Navbar />
 
-      <ScrollToTop />
+      <ScrollManager />
 
       <main>
         <Routes>
