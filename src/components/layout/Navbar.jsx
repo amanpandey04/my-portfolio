@@ -6,7 +6,7 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }) =>
     `
     relative inline-block
-    text-sm font-semibold uppercase tracking-[0.12em]
+    text-sm font-bold uppercase tracking-[0.12em]
     transition-colors duration-200
     sm:text-sm sm:tracking-[0.14em]
 
