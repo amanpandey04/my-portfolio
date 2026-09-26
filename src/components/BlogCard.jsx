@@ -2,7 +2,7 @@ import { ExternalLinkIcon } from "./Icons";
 
 export default function BlogCard({ blog, index }) {
   return (
-    <article className="flex h-full min-h-85 flex-col rounded-4xl border border-base-content/10 bg-base-200/70 p-6 shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
+    <article className="flex h-full min-h-85 flex-col rounded-4xl border border-base-content/10 bg-base-200/70 p-6 shadow-sm transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
       {/* Blog meta */}
       <div className="flex items-start justify-between gap-4">
         <p className="text-sm font-semibold tracking-[0.12em] text-accent">
