@@ -3,6 +3,10 @@ import { site } from "../data/site";
 
 export function useDocumentTitle(title) {
   useEffect(() => {
-    document.title = `${site.name} | ${title}`;
+    const nextTitle = `${site.name} | ${title}`;
+
+    if (document.title !== nextTitle) {
+      document.title = nextTitle;
+    }
   }, [title]);
 }

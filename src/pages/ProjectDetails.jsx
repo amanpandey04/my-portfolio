@@ -10,7 +10,7 @@ export default function ProjectDetails() {
   const project = projects.find((item) => item.slug === slug);
 
   // The hook always runs, regardless of whether the project exists.
-  useDocumentTitle(project ? project.title : "Project not found");
+  useDocumentTitle("Projects");
 
   if (!project) {
     return (

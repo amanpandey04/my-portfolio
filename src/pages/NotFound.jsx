@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <section className="mx-auto max-w-4xl px-4 py-32 text-center sm:px-6">
       <Reveal>
-        <p className="font-hand text-5xl text-accent">uh oh..</p>
+        <p className="font-hand text-5xl text-accent">uh oh...</p>
 
         <h1 className="mt-4 text-6xl font-semibold tracking-tight text-heading">404</h1>
 
