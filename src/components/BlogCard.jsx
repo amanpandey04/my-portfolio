@@ -2,7 +2,7 @@ import { ExternalLinkIcon } from "./Icons";
 
 export default function BlogCard({ blog, index }) {
   return (
-    <article className="flex h-full min-h-85 flex-col rounded-4xl border border-base-content/10 bg-base-200/70 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
+    <article className="flex h-full min-h-85 flex-col rounded-4xl border border-base-content/10 bg-base-200/70 p-6 shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
       {/* Blog meta */}
       <div className="flex items-start justify-between gap-4">
         <p className="text-sm font-semibold tracking-[0.12em] text-accent">
@@ -15,7 +15,7 @@ export default function BlogCard({ blog, index }) {
       {/* Blog title and description */}
       <div className="mt-7">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-display text-xl font-semibold tracking-tight text-heading">
+          <h3 className="min-w-0 wrap-break-word font-display text-xl font-semibold tracking-tight text-heading">
             {blog.title}
           </h3>
 
@@ -28,17 +28,19 @@ export default function BlogCard({ blog, index }) {
       </div>
 
       {/* Read article button */}
-      <div className="mt-auto pt-8">
-        <a
-          href={blog.url}
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-primary btn-sm gap-2"
-        >
-          Read article
-          <ExternalLinkIcon className="size-4" />
-        </a>
-      </div>
+      {blog.url && (
+        <div className="mt-auto pt-8">
+          <a
+            href={blog.url}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-primary btn-sm gap-2"
+          >
+            Read article
+            <ExternalLinkIcon className="size-4" />
+          </a>
+        </div>
+      )}
     </article>
   );
 }

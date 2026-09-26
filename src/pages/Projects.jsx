@@ -12,9 +12,10 @@ export default function Projects() {
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-24">
       <Reveal>
         <SectionHeading
+          as="h1"
           number="01 / Work"
           title="Projects, experiments and things I've built."
-          description="A collection of work ranging from frontend interfaces to experiments that taught me something useful."
+          description="A collection of work ranging from web interfaces to experiments that taught me something useful."
         />
       </Reveal>
 

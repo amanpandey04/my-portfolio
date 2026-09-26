@@ -29,7 +29,7 @@ export default function Home() {
       <section className="relative mx-auto flex max-w-6xl items-center px-4 pt-12 pb-8 sm:px-6 lg:pb-10 lg:pt-16">
         <div className="grid w-full items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="order-2 lg:order-1">
-            <p className="font-hand font-bold text-3xl text-accent sm:text-4xl">hey, I'm Aman</p>
+            <p className="font-hand font-bold text-4xl text-accent sm:text-5xl">hey, I'm Aman.</p>
 
             <h1 className="font-display mt-4 max-w-4xl text-2xl font-semibold leading-none tracking-[-0.03em] text-heading sm:text-3xl lg:text-4xl">
               I build <span className="text-accent">interfaces</span> that just make sense.
@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="relative">
                   {/* Text */}
                   <p
-                    className="absolute left-0 top-0 whitespace-nowrap font-hand font-base leading-none"
+                    className="absolute left-0 top-0 whitespace-nowrap font-hand font-medium leading-none"
                     style={{
                       fontSize: "20px",
                     }}
@@ -132,7 +132,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="work" className="section-anchor mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+      <section id="work" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Reveal>
           <SectionHeading
             number="01 / Selected work"
@@ -211,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="section-anchor mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+      <section id="about" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Reveal>
           <SectionHeading number="04 / About" title="A little more about me." />
         </Reveal>
@@ -220,8 +220,8 @@ export default function Home() {
           <Reveal className="h-full">
             <div className="h-full rounded-4xl border border-base-content/10 bg-base-200/70 p-7 shadow-sm sm:p-9">
               <p className="font-body leading-8 text-body/80">
-                I'm a frontend developer who enjoys building interfaces, learning by experimenting
-                and figuring out why things break when they inevitably do.
+                I'm a web developer who enjoys building interfaces, learning by experimenting and
+                figuring out why things break when they inevitably do.
               </p>
 
               <p className="font-body mt-5 leading-8 text-body/80">
@@ -265,12 +265,12 @@ export default function Home() {
 
       <section
         id="contact"
-        className="section-anchor mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 lg:pb-20 lg:pt-16"
+        className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 lg:pb-20 lg:pt-16"
       >
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] border border-base-content/10 bg-secondary/15 p-8 sm:p-12 lg:p-16">
             <div className="relative max-w-2xl">
-              <p className="mb-4 text-base font-semibold uppercase tracking-[0.14em] text-accent sm:text-lg">
+              <p className="mb-4 text-base font-bold uppercase tracking-[0.14em] text-accent sm:text-lg">
                 Let's talk
               </p>
 
@@ -278,7 +278,7 @@ export default function Home() {
                 Have something interesting in mind?
               </h2>
 
-              <p className="font-body mt-5 text-lg leading-8 text-body/75">
+              <p className="font-body mt-5 text-base leading-8 text-body/75">
                 Whether it's a project, an opportunity, or just a good conversation about building
                 things for the web.
               </p>

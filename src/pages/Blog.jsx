@@ -12,6 +12,7 @@ export default function Blog() {
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-24">
       <Reveal>
         <SectionHeading
+          as="h1"
           number="01 / Writing"
           title="Things I've written."
           description="Notes, lessons, experiments and thoughts from the things I'm learning."

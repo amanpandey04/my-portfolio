@@ -51,6 +51,7 @@ function ScrollManager() {
 
     return () => {
       cancelAnimationFrame(frameId);
+      savePosition();
       window.removeEventListener("scroll", handleScroll);
     };
   }, [location.key]);

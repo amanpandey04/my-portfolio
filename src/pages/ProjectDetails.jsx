@@ -37,7 +37,7 @@ export default function ProjectDetails() {
           {project.category}
         </p>
 
-        <h1 className="font-display mt-3 text-5xl font-semibold tracking-tight text-heading sm:text-6xl">
+        <h1 className="font-display mt-3 wrap-break-word text-2xl font-semibold tracking-tight text-heading sm:text-3xl">
           {project.title}
         </h1>
 
@@ -49,10 +49,12 @@ export default function ProjectDetails() {
           <span>{project.technologies.join(" • ")}</span>
         </div>
 
-        <p className="mt-7 max-w-3xl text-lg leading-8 text-body/75">{project.description}</p>
+        <p className="font-body mt-7 max-w-3xl text-base leading-8 text-body/75">
+          {project.description}
+        </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          {project.links.demo ? (
+          {project.links.demo && (
             <a
               href={project.links.demo}
               target="_blank"
@@ -62,38 +64,18 @@ export default function ProjectDetails() {
               Live demo
               <ExternalLinkIcon className="size-4" />
             </a>
-          ) : (
-            <button
-              type="button"
-              disabled
-              className="btn btn-primary cursor-not-allowed gap-2 opacity-40"
-              title="Add the live demo URL in projects.js"
-            >
-              Live demo
-              <ExternalLinkIcon className="size-4" />
-            </button>
           )}
 
-          {project.links.github ? (
+          {project.links.github && (
             <a
               href={project.links.github}
               target="_blank"
               rel="noreferrer"
               className="btn btn-outline gap-2 border-base-content/20 text-heading"
             >
-              Source
+              Source code
               <ExternalLinkIcon className="size-4" />
             </a>
-          ) : (
-            <button
-              type="button"
-              disabled
-              className="btn btn-outline cursor-not-allowed gap-2 border-base-content/20 text-heading opacity-40"
-              title="Add the GitHub URL in projects.js"
-            >
-              Source
-              <ExternalLinkIcon className="size-4" />
-            </button>
           )}
         </div>
       </Reveal>
@@ -102,9 +84,9 @@ export default function ProjectDetails() {
         <div className="space-y-14">
           <Reveal>
             <section>
-              <p className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              <h2 className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
                 Overview
-              </p>
+              </h2>
 
               <p className="font-body mt-4 leading-8 text-body/80">{project.details.overview}</p>
             </section>
@@ -112,9 +94,9 @@ export default function ProjectDetails() {
 
           <Reveal>
             <section>
-              <p className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              <h2 className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
                 The challenge
-              </p>
+              </h2>
 
               <p className="font-body mt-4 leading-8 text-body/80">{project.details.challenge}</p>
             </section>
@@ -122,9 +104,9 @@ export default function ProjectDetails() {
 
           <Reveal>
             <section>
-              <p className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              <h2 className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
                 My approach
-              </p>
+              </h2>
 
               <p className="font-body mt-4 leading-8 text-body/80">{project.details.approach}</p>
             </section>
@@ -132,9 +114,9 @@ export default function ProjectDetails() {
 
           <Reveal>
             <section>
-              <p className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              <h2 className="font-display inline-block border-b-2 border-accent/60 pb-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
                 What I learned
-              </p>
+              </h2>
 
               <p className="font-body mt-4 leading-8 text-body/80">{project.details.learning}</p>
             </section>

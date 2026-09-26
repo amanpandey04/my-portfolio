@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 import { ThemeContext } from "../../context/ThemeContext";
 
@@ -7,22 +7,22 @@ export default function ThemeProvider({ children }) {
     () => document.documentElement.dataset.theme || "portfolio-light",
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   function toggleTheme() {
-    setTheme((currentTheme) => {
-      const nextTheme = currentTheme === "portfolio-light" ? "portfolio-dark" : "portfolio-light";
+    document.documentElement.classList.add("theme-changing");
 
-      // Apply the page theme immediately,
-      // before React re-renders the toggle.
-      document.documentElement.dataset.theme = nextTheme;
+    setTheme((currentTheme) =>
+      currentTheme === "portfolio-light" ? "portfolio-dark" : "portfolio-light",
+    );
 
-      localStorage.setItem("theme", nextTheme);
-
-      return nextTheme;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.documentElement.classList.remove("theme-changing");
+      });
     });
   }
 

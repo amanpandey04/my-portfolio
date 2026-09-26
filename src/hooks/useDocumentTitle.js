@@ -1,7 +1,8 @@
 import { useEffect } from "react";
+import { site } from "../data/site";
 
 export function useDocumentTitle(title) {
   useEffect(() => {
-    document.title = `Aman | ${title}`;
+    document.title = `${site.name} | ${title}`;
   }, [title]);
 }

@@ -12,8 +12,8 @@ export const projects = [
     featured: true,
 
     links: {
-      demo: "",
-      github: "",
+      demo: "https://neon-bastion-v2.vercel.app/",
+      github: "https://github.com/amanpandey04/neon-bastion-v2",
     },
 
     details: {
@@ -76,7 +76,7 @@ export const projects = [
 
     links: {
       demo: "",
-      github: "",
+      github: "https://github.com/amanpandey04/tv-show-recommendation",
     },
 
     details: {

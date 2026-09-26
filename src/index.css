@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -53,7 +53,7 @@
   --color-base-content: #b8c1ec;
 
   --color-primary: #cc5d8a;
-  --color-primary-content: #fffffe;
+  --color-primary-content: #121629;
 
   --color-secondary: #72757e;
   --color-secondary-content: #fffffe;
@@ -79,7 +79,7 @@
 @theme {
   --font-sans: "Manrope", sans-serif;
   --font-display: "Fraunces", serif;
-  --font-body: "Lora", serif;
+  --font-body: "Fraunces", serif;
   --font-hand: "Caveat", cursive;
 }
 
@@ -89,7 +89,6 @@
   --portfolio-para: #172c66;
   --portfolio-secondary: #8bd3dd;
   --portfolio-primary: #f582ae;
-  --portfolio-primary-dark: #cc5d8a;
 }
 
 [data-theme="portfolio-dark"] {
@@ -98,7 +97,6 @@
   --portfolio-para: #b8c1ec;
   --portfolio-secondary: #72757e;
   --portfolio-primary: #cc5d8a;
-  --portfolio-primary-dark: #cc5d8a;
 }
 
 html {
@@ -106,12 +104,26 @@ html {
   scrollbar-gutter: stable;
 }
 
+html.theme-changing *,
+html.theme-changing *::before,
+html.theme-changing *::after {
+  transition: none !important;
+}
+
+html.theme-changing .theme-toggle .swap-on,
+html.theme-changing .theme-toggle .swap-off {
+  transition:
+    transform 200ms cubic-bezier(0, 0, 0.2, 1),
+    rotate 200ms cubic-bezier(0, 0, 0.2, 1),
+    opacity 200ms cubic-bezier(0, 0, 0.2, 1) !important;
+}
+
 body {
   min-width: 320px;
   overflow-x: hidden;
   background: var(--portfolio-bg);
   color: var(--portfolio-para);
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-sans);
 }
 
 ::selection {
@@ -125,7 +137,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--portfolio-primary);
+  outline: 3px solid var(--portfolio-heading);
   outline-offset: 4px;
 }
 
@@ -139,10 +151,6 @@ button {
 
 .bg-page {
   background: var(--portfolio-bg);
-}
-
-.section-anchor {
-  scroll-margin-top: 7rem;
 }
 
 .soft-grid {

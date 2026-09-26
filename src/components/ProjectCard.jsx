@@ -4,7 +4,7 @@ import { ArrowUpRightIcon, ExternalLinkIcon } from "./Icons";
 
 export default function ProjectCard({ project, index }) {
   return (
-    <article className="flex h-full min-h-85 flex-col rounded-4xl border border-base-content/10 bg-base-200/70 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
+    <article className="flex h-full min-h-85 flex-col rounded-4xl border border-base-content/10 bg-base-200/70 p-6 shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7">
       {/* Project meta */}
       <div className="flex items-start justify-between gap-4">
         <p className="text-sm font-semibold tracking-[0.12em] text-accent">
@@ -19,9 +19,9 @@ export default function ProjectCard({ project, index }) {
         <div className="flex items-start justify-between gap-4">
           <Link
             to={`/projects/${project.slug}`}
-            className="group/title inline-flex items-center gap-2"
+            className="group/title inline-flex min-w-0 items-center gap-2"
           >
-            <h3 className="font-display text-xl font-semibold tracking-tight text-heading">
+            <h3 className="min-w-0 wrap-break-word font-display text-xl font-semibold tracking-tight text-heading">
               {project.title}
             </h3>
 
@@ -50,7 +50,7 @@ export default function ProjectCard({ project, index }) {
 
       {/* Actions */}
       <div className="mt-auto flex flex-wrap gap-2 pt-8">
-        {project.links.demo ? (
+        {project.links.demo && (
           <a
             href={project.links.demo}
             target="_blank"
@@ -60,19 +60,9 @@ export default function ProjectCard({ project, index }) {
             Live demo
             <ExternalLinkIcon className="size-4" />
           </a>
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="btn btn-primary btn-sm cursor-not-allowed gap-2 opacity-40"
-            title="Add the live demo URL in projects.js"
-          >
-            Live demo
-            <ExternalLinkIcon className="size-4" />
-          </button>
         )}
 
-        {project.links.github ? (
+        {project.links.github && (
           <a
             href={project.links.github}
             target="_blank"
@@ -82,16 +72,6 @@ export default function ProjectCard({ project, index }) {
             Source
             <ExternalLinkIcon className="size-4" />
           </a>
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="btn btn-ghost btn-sm cursor-not-allowed gap-2 text-heading opacity-40"
-            title="Add the GitHub URL in projects.js"
-          >
-            Source
-            <ExternalLinkIcon className="size-4" />
-          </button>
         )}
 
         <Link to={`/projects/${project.slug}`} className="btn btn-ghost btn-sm gap-2 text-heading">
