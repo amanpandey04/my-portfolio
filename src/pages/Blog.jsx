@@ -13,7 +13,7 @@ export default function Blog() {
       <Reveal>
         <SectionHeading
           as="h1"
-          number="01 / Writing"
+          number="Writing"
           title="Things I've written."
           description="Notes, lessons, experiments and thoughts from the things I'm learning."
         />

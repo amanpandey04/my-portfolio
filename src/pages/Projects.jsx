@@ -13,7 +13,7 @@ export default function Projects() {
       <Reveal>
         <SectionHeading
           as="h1"
-          number="01 / Work"
+          number="Work"
           title="Projects, experiments and things I've built."
           description="A collection of work ranging from web interfaces to experiments that taught me something useful."
         />
