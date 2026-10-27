@@ -25,7 +25,10 @@ export default function ProjectCard({ project, index }) {
               {project.title}
             </h3>
 
-            <ArrowUpRightIcon className="size-5 shrink-0 text-accent opacity-0 transition-all duration-200 group-hover/title:translate-x-0.5 group-hover/title:opacity-100" />
+            <ArrowUpRightIcon
+              className="size-5 shrink-0 text-accent opacity-0 transition-[translate,opacity] duration-200
+              group-hover/title:translate-x-0.5 group-hover/title:opacity-100 group-focus-visible/title:translate-x-0.5 group-focus-visible/title:opacity-100"
+            />
           </Link>
 
           <p className="hidden shrink-0 text-xs font-medium uppercase tracking-[0.14em] text-body/45 md:block">
@@ -54,7 +57,7 @@ export default function ProjectCard({ project, index }) {
           <a
             href={project.links.demo}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="btn btn-primary btn-sm gap-2"
           >
             Live demo
@@ -66,7 +69,7 @@ export default function ProjectCard({ project, index }) {
           <a
             href={project.links.github}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="btn btn-ghost btn-sm gap-2 text-heading"
           >
             Source

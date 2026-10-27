@@ -15,9 +15,11 @@ export default function ProjectDetails() {
   if (!project) {
     return (
       <section className="mx-auto max-w-4xl px-4 py-32 text-center sm:px-6">
-        <h1 className="text-5xl font-semibold text-heading">Project not found.</h1>
+        <h1 className="font-display text-5xl font-semibold text-heading">Project not found.</h1>
 
-        <p className="mt-4 text-body/70">Looks like this project wandered off somewhere.</p>
+        <p className="font-body mt-4 text-body/70">
+          Looks like this project wandered off somewhere.
+        </p>
 
         <Link to="/projects" className="btn btn-primary mt-8">
           Back to projects
@@ -58,7 +60,7 @@ export default function ProjectDetails() {
             <a
               href={project.links.demo}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn btn-primary gap-2"
             >
               Live demo
@@ -70,7 +72,7 @@ export default function ProjectDetails() {
             <a
               href={project.links.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn btn-outline gap-2 border-base-content/20 text-heading"
             >
               Source code
@@ -124,9 +126,9 @@ export default function ProjectDetails() {
         </div>
 
         <aside>
-          <div className="sticky top-28 rounded-3xl border border-base-content/10 bg-base-100/70 p-6 shadow-sm">
+          <div className="rounded-3xl border border-base-content/10 bg-base-100/70 p-6 shadow-sm lg:sticky lg:top-28">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
-              Tech stack
+              Tech Stack
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">

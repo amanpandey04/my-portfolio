@@ -8,9 +8,11 @@ export default function NotFound() {
       <Reveal>
         <p className="font-hand text-5xl text-accent">uh oh...</p>
 
-        <h1 className="mt-4 text-6xl font-semibold tracking-tight text-heading">404</h1>
+        <h1 className="mt-4 font-display text-6xl font-semibold tracking-tight text-heading">
+          404
+        </h1>
 
-        <p className="mx-auto mt-5 max-w-lg leading-7 text-body/70">
+        <p className="font-body mx-auto mt-5 max-w-lg leading-7 text-body/70">
           The page you're looking for wandered off somewhere.
         </p>
 

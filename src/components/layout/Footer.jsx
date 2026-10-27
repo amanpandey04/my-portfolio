@@ -28,7 +28,7 @@ export default function Footer() {
             <a
               href={site.socials[0].href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn btn-ghost btn-circle text-heading hover:bg-base-300"
               aria-label="GitHub"
             >
@@ -40,7 +40,7 @@ export default function Footer() {
             <a
               href={site.socials[1].href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn btn-ghost btn-circle text-heading hover:bg-base-300"
               aria-label="LinkedIn"
             >

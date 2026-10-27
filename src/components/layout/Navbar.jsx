@@ -7,8 +7,7 @@ export default function Navbar() {
     `
     relative inline-block
     text-sm font-bold uppercase tracking-[0.12em]
-    transition-colors duration-200
-    sm:text-sm sm:tracking-[0.14em]
+    transition-colors duration-200 sm:tracking-[0.14em]
 
     after:absolute
     after:-bottom-1
@@ -16,7 +15,7 @@ export default function Navbar() {
     after:h-0.5
     after:-translate-x-1/2
     after:bg-accent
-    after:transition-all
+    after:transition-[width]
     after:duration-200
 
     hover:after:w-3/4

@@ -15,7 +15,6 @@ import SectionHeading from "../components/ui/SectionHeading";
 import { blogs } from "../data/blogs";
 import { projects } from "../data/projects";
 import { site } from "../data/site";
-import { stack } from "../data/stack";
 
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
@@ -49,7 +48,7 @@ export default function Home() {
                 <a
                   href={site.socials[0].href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="btn btn-square border-0 bg-secondary/15 text-heading transition-colors hover:bg-secondary/30 hover:text-accent"
                   aria-label="GitHub"
                   title="GitHub"
@@ -62,7 +61,7 @@ export default function Home() {
                 <a
                   href={site.socials[1].href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="btn btn-square border-0 bg-secondary/15 text-heading transition-colors hover:bg-secondary/30 hover:text-accent"
                   aria-label="LinkedIn"
                   title="LinkedIn"
@@ -123,7 +122,11 @@ export default function Home() {
                   <img
                     src="/assets/avatar.svg"
                     alt="Illustration of Aman"
-                    className="w-64 max-w-full sm:w-72"
+                    width={264}
+                    height={280}
+                    loading="eager"
+                    fetchPriority="high"
+                    className="h-auto w-64 max-w-full sm:w-72"
                   />
                 </div>
               </div>
@@ -163,30 +166,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Reveal>
           <SectionHeading
-            number="02 / What I use"
-            title="Tools I like working with."
-            description="The technologies I currently use to build and learn."
-          />
-        </Reveal>
-
-        <Reveal className="mt-10">
-          <div className="flex flex-wrap gap-3">
-            {stack.map((technology) => (
-              <span
-                key={technology}
-                className="rounded-2xl border border-secondary/30 bg-secondary/10 px-5 py-3 text-sm font-medium text-heading"
-              >
-                {technology}
-              </span>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
-        <Reveal>
-          <SectionHeading
-            number="03 / Writing"
+            number="02 / Writing"
             title="Things I've written."
             description="I like documenting what I'm learning, partly because teaching yourself something twice is surprisingly effective."
           />
@@ -213,7 +193,7 @@ export default function Home() {
 
       <section id="about" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Reveal>
-          <SectionHeading number="04 / About" title="A little more about me." />
+          <SectionHeading number="03 / About" title="A little more about me." />
         </Reveal>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">

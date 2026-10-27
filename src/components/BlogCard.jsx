@@ -33,7 +33,7 @@ export default function BlogCard({ blog, index }) {
           <a
             href={blog.url}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="btn btn-primary btn-sm gap-2"
           >
             Read article

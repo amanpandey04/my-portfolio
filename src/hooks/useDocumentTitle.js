@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { site } from "../data/site";
 
 export function useDocumentTitle(title) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const nextTitle = `${site.name} | ${title}`;
 
     if (document.title !== nextTitle) {
